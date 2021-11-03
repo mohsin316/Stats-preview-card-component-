@@ -1,0 +1,150 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /*/colors/*/
+    --bg-clr:hsl(233, 47%, 7%);
+    --container-clr:hsl(244, 38%, 16%);
+    --accent-clr:hsl(277, 64%, 61%);
+    --fh-clr:hsl(0, 0%, 100%);
+    --fp-clr:hsla(0, 0%, 100%, 0.75);
+    --fs-clr:hsla(0, 0%, 100%, 0.6);
+
+
+    --fw-r:300;
+    --fw-b:700;
+}
+
+body{
+    color: var(--fh-clr);
+    background-color: var(--bg-clr);
+    font-family: "inter", sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    background-color: var(--container-clr);
+    margin: 3rem 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 390px;
+}
+
+/*img{
+    max-width: 100%;
+    display: block;
+}*/
+
+
+.img-holder{
+    height: 200px;
+    width: 100%;
+    background-image: url('images/image-header-mobile.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: var(--accent-clr);
+}
+
+.content{
+    padding: 2rem 1rem;
+}
+
+h1{
+    font-size: 1.65rem;
+    max-width: 270px;
+    margin: 0 auto;
+}
+
+strong{
+    font-size: 1.25rem;
+}
+
+span{
+    color: var(--accent-clr);
+}
+
+.description{
+    color: var(--fp-clr);
+    max-width: 270px;
+    font-size: .9rem;
+    line-height: 1.3rem;
+    padding-top: 1rem;
+    margin: 0 auto;
+}
+
+.stats{
+    padding-top: 2rem;
+}
+
+.stats .info{
+    font-size: .75rem;
+    color: var(--fs-clr);
+    margin-top: .25rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+@media (min-width: 410px){
+    h1{
+        font-size: 1.85rem;
+        max-width: 300px;
+    }
+
+    .description{
+        max-width: 300px;
+        font-size: 1rem;
+        line-height: 1.65rem;
+        padding-top: 1.25rem;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width:1000px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        margin: 0;
+        max-width: none;
+        min-width: 700px;
+    }
+
+    .img-holder{
+        background-image: url(images/image-header-desktop.jpg);
+        grid-column: 2/3;
+        grid-row: 1/2;
+        height: 100%;
+    }
+
+    .content{
+        grid-column: 1/2 ;
+        grid-row: 1/2;
+        padding: 3rem 6rem 2rem 3rem;
+        text-align: left;
+    }
+
+    h1{
+        font-size: 1.6rem;
+    }
+
+    .description{
+        font-size: .8rem;    
+        line-height: 1.25rem;
+    }
+
+    .stats{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}
